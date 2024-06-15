@@ -7,7 +7,7 @@ const Display = () => {
     <Box  sx={{
       display: 'flex',
       justifyContent: 'space-between',
-      marginBottom: 10
+      marginBottom: 6
     }}>
       <CarDisplay index={0} />
       <CarDisplay index={1} />

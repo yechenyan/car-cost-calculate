@@ -23,15 +23,24 @@ const Home = () => {
         flexWrap: 'wrap'
       }}
     >
-      <Box sx= {{flex:1, '@media(minWidth: 1025px)' : {
-    width: '100%'
-  }}}>
+      <Box 
+        md = {{
+          width: '50%'
+        }}
+        sx= {{
+          flex:1, 
+        }}
+      >
         <Head />
         <Display />
       </Box>
-      <Box sx= {{flex: 1,  '@media(minWidth: 1025px)' : {
-    width: '100%'
-  }}}>
+      <Box 
+       md = {{
+        width: '50%'
+      }}
+        sx= {{
+          flex: 1, 
+        }}>
       <Demand />
       
         <Cars />

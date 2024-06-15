@@ -26,7 +26,7 @@ const Footer = () => {
     }}/></Link>
     <Box sx= {{marginTop: 3}}>Chenyan.Ye@Student.HTW-Berlin.de</Box>
     <Box sx= {{marginTop: 1}}>Anjiali@Student.HTW-Berlin.de</Box>
-    <Box sx= {{marginTop: 1}}>2024</Box>
+    <Box sx= {{marginTop: 3}}>@2024</Box>
   </Box>
 }
 

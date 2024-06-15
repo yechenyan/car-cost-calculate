@@ -44,7 +44,7 @@ const AddCar = () => {
     paddingTop: 3,
     paddingBottom: 1
   }}>
-    <Button onClick = {addCar} size='large' sx={{
+    <Button onClick = {addCar} size='medium' sx={{
       fontSize: 20
     }} variant="outlined"><AddIcon />Add Car</Button>
   </Box>
