@@ -1,5 +1,4 @@
-import Image from "next/image";
-import calculate from "./calculate/index.js";
+'use client'
 import Home from "./Home/index.jsx";
 export default function Page() {
   return (
