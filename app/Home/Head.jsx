@@ -8,7 +8,6 @@ const Head = () => {
           fontSize: "32px",
           fontWeight: 700,
           textAlign: "center",
-          color: "blue",
         }}
       >
         Autokosten Rechner
