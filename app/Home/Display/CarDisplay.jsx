@@ -16,7 +16,7 @@ const textStyle = {
 const CarDisplay = ({ index }) => {
 
   const [cars] = useAtom(carsDataAtom);
-  const [selectCarsId] = useAtom(selectCarsIdAtom);
+  const [selectCarsId, setSelectCarsId] = useAtom(selectCarsIdAtom);
 
   const [car2calculate]  = useAtom(car2calculateAtom)
   const [car1calculate]  = useAtom(car1calculateAtom)
@@ -31,7 +31,13 @@ const CarDisplay = ({ index }) => {
         display: 'flex',
         justifyContent:'center'
       }}>
-        <Select value = {selectCarsId[index]} >
+        <Select value = {selectCarsId[index]} onChange = {(e) => {
+          setSelectCarsId(data => {
+            const newData = [...data]
+            newData[index] =  e.target.value
+            return newData
+          })
+        }}>
           {cars.map((car) => (
             <MenuItem value={car.id} key={car.id} >
               {car.name}
