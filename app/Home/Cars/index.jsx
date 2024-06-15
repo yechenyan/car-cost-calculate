@@ -18,7 +18,7 @@ const Cars = () => {
       fontSize: '24px',
     }}>Cars: </Box>
     {
-      cars.map((car)=> <CarItem car = {car} />)
+      cars.map((car)=> <CarItem car = {car} key= {car.id}/>)
     }
   </Box>
 }
