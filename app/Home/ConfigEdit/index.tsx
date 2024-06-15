@@ -37,7 +37,7 @@ const ConfigEdit = () => {
         label="Config"
         multiline
         rows={16}
-        value = {JSON.stringify(userData)}
+        value = {JSON.stringify(userData, null, 4)}
         onChange = {handleChange}
     />
     <Button onClick = {() => setShow(false)} sx= {{
