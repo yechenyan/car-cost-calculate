@@ -34,7 +34,7 @@ const Demand = () => {
            />
       </MyLabelField>
 
-      <MyLabelField label = 'Km pro Woche'>
+      <MyLabelField label = 'Km pro Woche in Km'>
         <Slider 
           min = {0}
           max = {1000}
@@ -43,7 +43,7 @@ const Demand = () => {
            />
       </MyLabelField>
 
-      <MyLabelField label = 'Stromabdeckung Haushalt'>
+      <MyLabelField label = 'Stromabdeckung Haushalt in %'>
         <Slider 
           min = {0}
           step={0.01}
