@@ -45,7 +45,6 @@ const AddCar = () => {
     paddingBottom: 1
   }}>
     <Button onClick = {addCar} size='medium' sx={{
-      fontSize: 20
     }} variant="outlined"><AddIcon />Add Car</Button>
   </Box>
 }
