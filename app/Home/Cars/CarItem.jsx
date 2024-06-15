@@ -2,7 +2,7 @@ import { currentCarAtom , userDataAtom} from "../../services/userData";
 import { currentEditIdCarAtom, selectCarsAtom} from "../../services/ui";
 import CarEdit from './CarEdit'
 import {useAtom} from 'jotai'
-import { Box } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import {cardStyle} from "../style"
 
 
@@ -19,12 +19,15 @@ const CarItem = ({car}) => {
 
   return <Box sx = {{...cardStyle, display: 'flex', justifyContent: 'space-between'}}>
     <Box sx= {{
-      fontSize: '28px'
+      paddingTop: 1,
+      paddingBottom: 1,
+      fontSize: '20px',
+      color: '#000'
     }}>{car.name}</Box>
-    <Box onClick = {() => {setCurrentEditIdCar(car.id)}} sx= {{
+    <Button onClick = {() => {setCurrentEditIdCar(car.id)}} sx= {{
       fontSize: '16px',
       color: '#676565'
-    }}>Edit</Box>
+    }}>Edit</Button>
   </Box>
 
 

@@ -1,7 +1,7 @@
 'use client'
 import { useAtom } from "jotai";
 
-import { Box } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import MyTextFiled from "../Components/MyTextField"
 
 import { currentCarAtom , userDataAtom} from "../../services/userData";
@@ -11,49 +11,67 @@ import {getNumberInput, getTextInput} from "../utils/input.ts"
 
 const Title = ({children}) => {
   return <Box sx = {{
-    marginTop: 2
+    marginTop: 4,
+    fontSize: '20px'
   }}>{children}</Box>
 }
 
 const CarEdit = () => {
   const [car, setCar] = useAtom(currentCarAtom)
   const [_, setCurrentCarId] = useAtom(currentEditIdCarAtom)
+  const [userData,setUserData ] = useAtom(userDataAtom)
+  
   const handleDelete = () => {
-
+    setUserData(data => {
+      const newCars = data.cars.filter(item => item.id!== car.id)
+      return {
+       ...data,
+        cars: newCars
+      }
+    })
   }
   return <Box sx= {{width: '100%'}}>
     <Box sx= {{justifyContent: 'space-between', display: 'flex'}}>
       <Box sx= {{
-        fontSize: '28px'
+        fontSize: '28px',
+        fontWeight: 500,
       }}>Edit Car</Box>
-      <Box onClick = {() => {
+      <Button onClick = {() => {
         setCurrentCarId(null)
       }}
         sx= {{color: '#676565'}}
-      >Close</Box>
+      >Close</Button>
     </Box>
-    <MyTextFiled label = 'Stromabdeckung' {...getTextInput('name', setCar, car)} type = 'text'/>
-    <MyTextFiled label = 'Stromverbrauch/100km' {...getNumberInput('stromabdeckung', setCar, car)}/>
-    <MyTextFiled label = 'Kraftstoffverbrauch/100km' {...getNumberInput('kraftstoffverbrauch', setCar, car)}/>
-    <MyTextFiled label = 'Ladeverluste' {...getNumberInput('ladeverluste', setCar, car)}/>
+    <MyTextFiled label = 'Name' {...getTextInput('name', setCar, car)} type = 'text'/>
+    <MyTextFiled label = 'Stromverbrauch/100km in L' {...getNumberInput('stromabdeckung', setCar, car)}/>
+    <MyTextFiled label = 'Kraftstoffverbrauch/100km in KW/h' {...getNumberInput('kraftstoffverbrauch', setCar, car)}/>
+    <MyTextFiled label = 'Ladeverluste in %' {...getNumberInput('ladeverluste', setCar, car)}/>
 
     <Title>Anschaffungskosten</Title>
-    <MyTextFiled label = 'Fahrzeugpreis' {...getNumberInput('fahrzeugpreis', setCar, car)}/>
-    <MyTextFiled label = 'Steuern' {...getNumberInput('steuern', setCar, car)}/>
-    <MyTextFiled label = 'KFZ-Zeichen' {...getNumberInput('KFZZeichen', setCar, car)}/>
-    <MyTextFiled label = 'Subventionen' {...getNumberInput('subventionen', setCar, car)}/>
+    <MyTextFiled label = 'Fahrzeugpreis in  €' {...getNumberInput('fahrzeugpreis', setCar, car)}/>
+    <MyTextFiled label = 'Steuern in €' {...getNumberInput('steuern', setCar, car)}/>
+    <MyTextFiled label = 'KFZ-Zeichen in €' {...getNumberInput('KFZZeichen', setCar, car)}/>
+    <MyTextFiled label = 'Subventionen in  €' {...getNumberInput('subventionen', setCar, car)}/>
     
     <Title>Unterhaltskosten</Title>
-    <MyTextFiled label = 'Jährliche Wartungskosten Ø' {...getNumberInput('jährlicheWartungskosten', setCar, car)}/>
-    <MyTextFiled label = 'Versicherungskosten Ø ' {...getNumberInput('versicherungskosten', setCar, car)}/>
+    <MyTextFiled label = 'Jährliche Wartungskosten in €/Jahr' {...getNumberInput('jährlicheWartungskosten', setCar, car)}/>
+    <MyTextFiled label = 'Versicherungskosten in €/Jahr ' {...getNumberInput('versicherungskosten', setCar, car)}/>
     
     {/* <Title>Batterieverluste</Title>
     <MyTextFiled label = 'Batteriekapazität' {...getNumberInput('name', setCar, car)}/>
     <MyTextFiled label = 'Batterieverluste' {...getNumberInput('name', setCar, car)}/>
      */}
     <Title>Abfallentsorgung</Title>
-    <MyTextFiled label = 'Wiederverkaufswert' {...getNumberInput('wiederverkaufswert', setCar, car)}/>
-    <Box onClick= {handleDelete} >Delete</Box>
+    <MyTextFiled label = 'Wiederverkaufswert in €' {...getNumberInput('wiederverkaufswert', setCar, car)}/>
+    <Box sx= {{
+      display: 'flex',
+      justifyContent: "center"
+    }}>
+      <Button onClick= {handleDelete} sx= {{
+        marginTop: 1,
+        padding:1,
+      }}>Delete</Button>
+    </Box>
   </Box>
 
 }

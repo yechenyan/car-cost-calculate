@@ -2,18 +2,18 @@ import { Box } from "@mui/material";
 
 const Head = () => {
   return (
-    <Box sx={{ paddingTop: "56px" }}>
+    <Box sx={{ paddingTop: 10}}>
       <Box
         sx={{
-          fontSize: "20px",
-          fontWeigth: 700,
+          fontSize: "32px",
+          fontWeight: 700,
           textAlign: "center",
         }}
       >
-        Autokosten-Rechner
+        Autokosten Rechner
       </Box>
-      <Box sx={{ color: "#A6A6A6", textAlign: "center", marginTop: "24px" }}>
-        Welches Auto ist günstiger auf die gesamte Lebensdauer gesehen?{" "}
+      <Box sx={{ color: "#A6A6A6", textAlign: "center", marginTop: 1, marginBottom: 8 }}>
+        Welches Auto ist günstiger <br />auf die gesamte Lebensdauer gesehen?{" "}
       </Box>
     </Box>
   );

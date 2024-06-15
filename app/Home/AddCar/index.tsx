@@ -1,8 +1,8 @@
 'use client'
-import { Box } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import {useAtom} from 'jotai'
 import { carsDataAtom , userDataAtom} from "../../services/userData";
-
+import AddIcon from '@mui/icons-material/Add';
 let lastId = 100
 const AddCar = () => {
   
@@ -44,7 +44,9 @@ const AddCar = () => {
     paddingTop: 3,
     paddingBottom: 1
   }}>
-    <Box onClick = {addCar}>Add Car</Box>
+    <Button onClick = {addCar} size='large' sx={{
+      fontSize: 20
+    }} variant="outlined"><AddIcon />Add Car</Button>
   </Box>
 }
 

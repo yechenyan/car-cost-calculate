@@ -1,4 +1,9 @@
-import { Box } from "@mui/material";
+
+
+import GitHubIcon from '@mui/icons-material/GitHub';
+
+import StarBorderIcon from '@mui/icons-material/StarBorder';
+import { Box, Link } from "@mui/material";
 
 
 const Footer = () => {
@@ -7,13 +12,21 @@ const Footer = () => {
     paddingBottom: 4,
     paddingLeft: 2,
     paddingRight: 2,
-    fontSize: '12px',
-    color: '#636363'
+    fontSize: '16px',
+    color: '#636363',
+    marginTop: 4
+
   }}> 
-    <a href= 'https://github.com/yechenyan/car-cost-calculate'>Github</a>
-    <Box>Chenyan.Ye@Student.HTW-Berlin.de</Box>
-    <Box>Anjiali@Student.HTW-Berlin.de</Box>
-    <Box>2024</Box>
+    <Link href= 'https://github.com/yechenyan/car-cost-calculate' underline="none" sx= {{
+      display: 'flex',
+      alignItems: 'center',
+      color: '#636363'
+    }}> Give me a star <GitHubIcon fontSize='12' sx= {{
+      marginLeft: 1
+    }}/></Link>
+    <Box sx= {{marginTop: 3}}>Chenyan.Ye@Student.HTW-Berlin.de</Box>
+    <Box sx= {{marginTop: 1}}>Anjiali@Student.HTW-Berlin.de</Box>
+    <Box sx= {{marginTop: 1}}>2024</Box>
   </Box>
 }
 

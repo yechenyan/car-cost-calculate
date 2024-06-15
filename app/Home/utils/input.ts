@@ -43,7 +43,6 @@ export const getTextInput = (key, setCar, car) => {
 
 export const getSlideInput = (key, set, data) => {
   const onChange = (e) => {
-    console.log(411, value);
     set({ [key]: e.target.value });
   };
   const value = data[key];

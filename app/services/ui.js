@@ -1,7 +1,8 @@
 import {atom} from 'jotai'
 import {carsDataAtom} from './userData'
+import { atomWithStorage } from 'jotai/utils'
 
-export const selectCarsIdAtom = atom([0, 0]);
+export const selectCarsIdAtom = atomWithStorage('select-cars', [0, 1]);
 
 export const currentEditIdCarAtom = atom(null);
 

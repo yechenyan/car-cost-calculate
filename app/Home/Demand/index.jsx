@@ -1,5 +1,5 @@
 'use client'
-import { Box, Slider } from "@mui/material";
+import { Box, Slider, Button } from "@mui/material";
 import {cardStyle} from "../style"
 import { useAtom } from "jotai";
 import {isDemandMoreAtom} from "../../services/ui"
@@ -19,7 +19,10 @@ const Demand = () => {
     }}>
     <Box sx= {cardStyle}> 
       <Box sx={{
-        fontSize: '28px'
+        fontSize: '28px',
+        fontWeight: 500,
+        paddingTop: 2,
+        
       }}> What are your car usage habits?</Box>
     
       <MyLabelField label = 'Jahr'>
@@ -34,7 +37,7 @@ const Demand = () => {
         <Slider 
           min = {0}
           max = {1000}
-          step = {100}
+          step = {10}
           {...getSlideInput('kmProWoche',setDemandData, demandData)}
            />
       </MyLabelField>
@@ -50,14 +53,19 @@ const Demand = () => {
       {isDemandMore&& <DemandDetail />}
       <Box sx= {{
         marginTop: 2,
-        color: '#676565',
-        textAlign: 'center'
-      }}
-      onClick = {() => {setIsDemandMore(value => !value)}}
+        display: 'flex',
+        justifyContent: "center"
+      }}>
+        <Button sx= {{
+         
+          padding: 1
+        }}
+        onClick = {() => {setIsDemandMore(value => !value)}}
 
-      > {
-        !isDemandMore ? 'show more' : 'show less'
-      }</Box>
+        > {
+          !isDemandMore ? 'show more' : 'show less'
+        }</Button>
+      </Box>
       </Box>
       
   

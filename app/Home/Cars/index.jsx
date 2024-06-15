@@ -11,7 +11,12 @@ const Cars = () => {
   return <Box sx= {{
     paddingLeft: 2,
     paddingRight: 2,
+    marginTop: 6,
   }}>
+    <Box sx= {{
+      paddingLeft: 1,
+      fontSize: '24px',
+    }}>Cars: </Box>
     {
       cars.map((car)=> <CarItem car = {car} />)
     }

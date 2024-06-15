@@ -1,11 +1,14 @@
 'use client'
-import { Box, TextField } from "@mui/material";
+import { Box, TextField, Button } from "@mui/material";
 import {useAtom} from 'jotai'
-import { carsDataAtom , userDataAtom} from "../../services/userData";
+import { carsDataAtom , userDataAtom, defaultUserData} from "../../services/userData";
 import { useState } from "react";
+import { selectCarsIdAtom} from "../../services/ui";
+
 
 const ConfigEdit = () => {
   const [userData, setUserData] = useAtom(userDataAtom)
+  const [carsId, setCarsId] = useAtom(selectCarsIdAtom)
   const [show, setShow] = useState(false)
   
   const handleChange = (e)=> {
@@ -16,14 +19,17 @@ const ConfigEdit = () => {
     }
   }
 
+  const restData = () => {
+    setUserData(defaultUserData)
+    setCarsId([0,1])
+  }
+
   if (!show) {
     return <Box onClick = {() => setShow(true)} sx = {{
       textAlign: 'center',
-      color: '#676565',
-      fontSize: '16px',
-      marginTop: 2
+      marginTop: 1
 
-    }}>Edit Config</Box>
+    }}><Button size='small'>Edit Config</Button></Box>
   }
   return <Box sx= {{padding: 2}}>
      <TextField
@@ -34,7 +40,11 @@ const ConfigEdit = () => {
         value = {JSON.stringify(userData)}
         onChange = {handleChange}
     />
-    <Box onClick = {() => setShow(false)}>ok</Box>
+    <Button onClick = {() => setShow(false)} sx= {{
+      marginTop:1,
+      width: '50%'
+    }}>ok</Button>
+    <Button onClick = {restData}>reset data</Button>
   </Box>
 }
 

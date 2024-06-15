@@ -15,13 +15,13 @@ const DemandDetail = () => {
   const [demandData, setDemandData ] = useAtom(demandAtom)
   
 
-  return <Box>
-      <MyTextFiled label = 'Benzinpreis' {...getNumberInput('benzinpreis', setDemandData, demandData)}/>
-      <MyTextFiled label = 'Ölpreisentwicklung' {...getNumberInput('ölpreisentwicklung', setDemandData, demandData)}/>
-      <MyTextFiled label = 'Stromkosten Haushalt' {...getNumberInput('stromkostenHaushalt', setDemandData, demandData)}/>
-      <MyTextFiled label = 'Stromkostenentwicklung Haushalt' {...getNumberInput('stromkostenHaushaltWicklung', setDemandData, demandData)}/>
-      <MyTextFiled label = 'Strommarktpreise' {...getNumberInput('strommarktpreise', setDemandData, demandData)}/>
-      <MyTextFiled label = 'Stromkostenentwicklung Markt' {...getNumberInput('strommarktpreiseWicklung', setDemandData, demandData)}/>
+  return <Box sx= {{marginTop: 2}}>
+      <MyTextFiled label = 'Benzinpreis in €' {...getNumberInput('benzinpreis', setDemandData, demandData)}/>
+      <MyTextFiled label = 'Ölpreisentwicklung in %' {...getNumberInput('ölpreisentwicklung', setDemandData, demandData)}/>
+      <MyTextFiled label = 'Stromkosten Haushalt in €' {...getNumberInput('stromkostenHaushalt', setDemandData, demandData)}/>
+      <MyTextFiled label = 'Stromkostenentwicklung Haushalt in %' {...getNumberInput('stromkostenHaushaltWicklung', setDemandData, demandData)}/>
+      <MyTextFiled label = 'Strommarktpreise in €' {...getNumberInput('strommarktpreise', setDemandData, demandData)}/>
+      <MyTextFiled label = 'Stromkostenentwicklung Markt in %' {...getNumberInput('strommarktpreiseWicklung', setDemandData, demandData)}/>
   </Box>
 }
 

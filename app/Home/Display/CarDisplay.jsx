@@ -1,4 +1,5 @@
 import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import { carsDataAtom, car2calculateAtom, car1calculateAtom } from "../../services/userData";
@@ -8,9 +9,15 @@ import { selectCarsAtom, selectCarsIdAtom } from "../../services/ui"
 const textStyle = {
    display: 'flex',
   justifyContent:'center',
-  marginTop: '16px',
-  fontSize: '14px',
-  color: '#000'
+  marginTop: 4,
+  fontSize: '16px',
+  color: '#000',
+  width: '100px'
+}
+
+const spanTextStyle = {
+  // width: 100,
+  color: '#676565'
 }
 
 const CarDisplay = ({ index }) => {
@@ -31,13 +38,21 @@ const CarDisplay = ({ index }) => {
         display: 'flex',
         justifyContent:'center'
       }}>
-        <Select value = {selectCarsId[index]} onChange = {(e) => {
+        <Select 
+        sx = {{
+          width: 120, 
+           marginBottom: 4
+          }}
+        
+          value = {selectCarsId[index]} onChange = {(e) => {
           setSelectCarsId(data => {
             const newData = [...data]
             newData[index] =  e.target.value
             return newData
           })
-        }}>
+        }}
+        size='small'
+        >
           {cars.map((car) => (
             <MenuItem value={car.id} key={car.id} >
               {car.name}
@@ -48,18 +63,32 @@ const CarDisplay = ({ index }) => {
       </Box>
       <Box sx={{
         display: 'flex',
-        justifyContent:'center'
+        justifyContent:'center',
+        fontSize: 44,
+        alignItems: 'flex-end'
       }}>
-        € {carCalculate.per} / km
+        €{carCalculate.per} 
+        <Box sx={{
+          fontSize: 16,
+          lineHeight:'30px'
+        }}>/ km</Box>
       </Box>
-      <Box sx = {textStyle} >
-      total: €{carCalculate.total}
+      <Box sx= {{
+        display: 'flex',
+        alignItems: 'center',
+        flexDirection: 'column'
+      }}>
+        <Box sx = {textStyle} >
+        <span style={spanTextStyle}>Total&nbsp;</span> €{carCalculate.total}
+        </Box>
+        <Box sx = {textStyle} >
+        <span style={spanTextStyle}>Kosten&nbsp;</span>
+        €{carCalculate.kosten}
+        </Box>
+        <Box sx = {textStyle} >
+        <span style={spanTextStyle}>OPEX&nbsp;</span>
+        €{carCalculate.OPEX}
       </Box>
-      <Box sx = {textStyle} >
-      Kosten: €{carCalculate.kosten}
-      </Box>
-      <Box sx = {textStyle} >
-      OPEX: €{carCalculate.OPEX}
       </Box>
     
     </Box>

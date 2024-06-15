@@ -6,24 +6,41 @@ import Demand from "./Demand"
 import AddCar from "./AddCar"
 import ConfigEdit from "./ConfigEdit";
 import Footer from "./Footer";
+import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+import theme from './theme'
 
 const Home = () => {
   return (
+    <ThemeProvider theme={theme}>
+
     <Box
       sx={{
         background: "#F9F8F8",
         minHeight: '100vh',
-        paddingBottom: 2
+        width: '100vw',
+        paddingBottom: 2,
+        display: 'flex',
+        flexWrap: 'wrap'
       }}
     >
-      <Head />
-      <Display />
+      <Box sx= {{flex:1, '@media(minWidth: 1025px)' : {
+    width: '100%'
+  }}}>
+        <Head />
+        <Display />
+      </Box>
+      <Box sx= {{flex: 1,  '@media(minWidth: 1025px)' : {
+    width: '100%'
+  }}}>
       <Demand />
-      <Cars />
-      <AddCar />
-      <ConfigEdit />
-      <Footer />
+      
+        <Cars />
+        <AddCar />
+        <ConfigEdit />
+        <Footer />
+      </Box>
     </Box>
+    </ThemeProvider>
   );
 };
 

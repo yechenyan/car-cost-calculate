@@ -1,10 +1,9 @@
 import { atom } from "jotai";
 import calculate from "../calculate"
 import {selectCarsIdAtom, currentEditIdCarAtom} from "./ui"
+import { atomWithStorage } from 'jotai/utils'
 
-let carId = 0;
-
-export const userDataAtom = atom({
+export const defaultUserData = {
   nachfrageData: {
     zinsrate: 0.02,
     jahr: 10,
@@ -55,7 +54,9 @@ export const userDataAtom = atom({
       wiederverkaufswert: 10000,
     },
   ],
-});
+}
+
+export const userDataAtom = atomWithStorage('user-data',defaultUserData);
 
 export const currentCarAtom = atom((get)=> {
   const currentCarId = get(currentEditIdCarAtom)
@@ -112,19 +113,23 @@ export const carsDataAtom = atom((get) => {
 export const car1calculateAtom = atom((get) => {
   const data = get(userDataAtom)
   const selectCarsId = get(selectCarsIdAtom)
+  const cars = get(carsDataAtom)
+  const car = cars.find(car => car.id === selectCarsId[0])
 
   return calculate({
     ...data.nachfrageData,
-    ...data.cars[selectCarsId[0]],
+    ...car,
   })
 })
 
 export const car2calculateAtom = atom((get) => {
   const data = get(userDataAtom)
+  const cars = get(carsDataAtom)
   const selectCarsId = get(selectCarsIdAtom)
+  const car = cars.find(car => car.id === selectCarsId[1])
 
   return calculate({
     ...data.nachfrageData,
-    ...data.cars[selectCarsId[1]],
+    ...car,
   })
 })
