@@ -10,7 +10,7 @@ const Head = () => {
           textAlign: "center",
         }}
       >
-        Autokosten Rechner
+        Autokosten /Rechner
       </Box>
       <Box
         sx={{
