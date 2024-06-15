@@ -5,6 +5,9 @@ import MenuItem from "@mui/material/MenuItem";
 import { carsDataAtom, car2calculateAtom, car1calculateAtom } from "../../services/userData";
 import { useAtom } from "jotai";
 import { selectCarsAtom, selectCarsIdAtom } from "../../services/ui"
+import BatteryChargingFullIcon from '@mui/icons-material/BatteryChargingFull';
+import EvStationIcon from '@mui/icons-material/EvStation';
+import ExtensionIcon from '@mui/icons-material/Extension';
 
 const textStyle = {
    display: 'flex',
@@ -61,10 +64,21 @@ const CarDisplay = ({ index }) => {
         </Select>
 
       </Box>
+      <Box sx= {{
+        display: 'flex',
+        justifyContent: 'center',
+        height: 10,
+        alignItems: 'center',
+      }}>
+        {carCalculate.type === 'E-Auto' && <BatteryChargingFullIcon  fontSize="large"/>}
+        {carCalculate.type === 'Benziner' && <EvStationIcon  fontSize="large"/>}
+        {carCalculate.type === 'Hybrid' && <span>HYBRID</span>}
+      </Box>
       <Box sx={{
         display: 'flex',
         justifyContent:'center',
         fontSize: 44,
+        marginTop: 4,
         alignItems: 'flex-end'
       }}>
         €{carCalculate.per} 
@@ -73,6 +87,7 @@ const CarDisplay = ({ index }) => {
           lineHeight:'30px'
         }}>/ km</Box>
       </Box>
+     
       <Box sx= {{
         display: 'flex',
         alignItems: 'center',

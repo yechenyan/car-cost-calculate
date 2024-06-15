@@ -11,12 +11,21 @@ const calculate = (data) => {
   const per = total / totalKm;
   const perOPEX = OPEX / data.jahr;
 
+  let type = 'Hybrid'
+
+  if (data.stromabdeckung >= 1) {
+    type = 'E-Auto'
+  }  else if (data.stromabdeckung <= 0) {
+    type = 'Benziner'
+  }
+
   return {
     total: total.toFixed(2),
     kosten: kosten.toFixed(2),
     OPEX: perOPEX.toFixed(2),
     per: per.toFixed(2),
     perOPEX: perOPEX.toFixed(2),
+    type
   };
 };
 
