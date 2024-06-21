@@ -20,10 +20,9 @@ const Demand = () => {
     }}>
     <Box sx= {cardStyle}> 
       <Box sx={{
-        fontSize: '28px',
+        fontSize: '20px',
         fontWeight: 500,
-        paddingTop: 2,
-        
+        paddingTop: 1,
       }}> What are your car usage habits?</Box>
     
       <MyLabelField label = 'Jahr'>
@@ -46,8 +45,8 @@ const Demand = () => {
       <MyLabelField label = 'Stromabdeckung Haushalt in %'>
         <Slider 
           min = {0}
-          step={0.01}
-          max = {1}
+          step={1}
+          max = {100}
           {...getSlideInput('stromabdeckungHaushalt',setDemandData, demandData)}
            />
       </MyLabelField>
@@ -58,7 +57,7 @@ const Demand = () => {
         justifyContent: "center"
       }}>
         <Button sx= {{
-         
+          color: '#676565',
           padding: 1
         }}
         onClick = {() => {setIsDemandMore(value => !value)}}

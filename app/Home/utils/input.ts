@@ -50,6 +50,6 @@ export const getSlideInput = (key, set, data) => {
   return {
     onChange,
     value,
-    valueLabelDisplay: "on",
+    valueLabelDisplay: "auto",
   };
 };

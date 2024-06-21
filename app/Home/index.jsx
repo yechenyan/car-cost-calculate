@@ -15,29 +15,32 @@ const Home = () => {
 
     <Box
       sx={{
-        background: "#F9F8F8",
+        background: "linear-gradient(66deg, #E1F0E3 0%, #edddfb 100%)",
         minHeight: '100vh',
-        width: '100vw',
         paddingBottom: 2,
         display: 'flex',
-        flexWrap: 'wrap'
+        flexWrap: 'wrap',
+
+        // backgroundImage: "url('/car-cost-calculate/bg.png')",
+        // backgroundSize: 'cover',
+        // backgroundPosition: 'center',
+        // backgroundRepeat: 'no-repeat',
+        // backgroundAttachment: 'fixed',
+        // backgroundSize: 'cover',
       }}
     >
       <Box 
-        md = {{
-          width: '50%'
-        }}
         sx= {{
           flex:1, 
+          sx: {
+            width: '100vw'
+          }
         }}
       >
         <Head />
         <Display />
       </Box>
       <Box 
-       md = {{
-        width: '50%'
-      }}
         sx= {{
           flex: 1, 
         }}>
@@ -47,7 +50,7 @@ const Home = () => {
         <AddCar />
         <ConfigEdit />
         <Footer />
-      </Box>
+      </Box> 
     </Box>
     </ThemeProvider>
   );

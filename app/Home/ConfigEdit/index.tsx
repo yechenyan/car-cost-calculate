@@ -29,7 +29,7 @@ const ConfigEdit = () => {
       textAlign: 'center',
       marginTop: 1
 
-    }}><Button size='small'>Edit Config</Button></Box>
+    }}><Button size='small' sx= {{color: '#676565'}}>Edit Config</Button></Box>
   }
   return <Box sx= {{padding: 2}}>
      <TextField

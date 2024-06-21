@@ -8,19 +8,27 @@ import { selectCarsAtom, selectCarsIdAtom } from "../../services/ui"
 import BatteryChargingFullIcon from '@mui/icons-material/BatteryChargingFull';
 import EvStationIcon from '@mui/icons-material/EvStation';
 import ExtensionIcon from '@mui/icons-material/Extension';
+import EarbudsBatteryIcon from '@mui/icons-material/EarbudsBattery';
 
 const textStyle = {
-   display: 'flex',
   justifyContent:'center',
   marginTop: 4,
-  fontSize: '16px',
-  color: '#000',
-  width: '100px'
+
+  width: '100px',
+  whiteSpace: 'nowrap',
 }
 
 const spanTextStyle = {
   // width: 100,
-  color: '#676565'
+  fontSize: '14px',
+  color: '#676565',
+  display: 'block',
+}
+
+const span2TextStyle = {
+  fontSize: '20px',
+  color: '#000',
+  marginTop: 1
 }
 
 const CarDisplay = ({ index }) => {
@@ -69,41 +77,54 @@ const CarDisplay = ({ index }) => {
         justifyContent: 'center',
         height: 10,
         alignItems: 'center',
+        marginTop: 3
       }}>
-        {carCalculate.type === 'E-Auto' && <BatteryChargingFullIcon  fontSize="large"/>}
-        {carCalculate.type === 'Benziner' && <EvStationIcon  fontSize="large"/>}
-        {carCalculate.type === 'Hybrid' && <span>HYBRID</span>}
+        {carCalculate.type === 'E-Auto' && <BatteryChargingFullIcon sx= {{fontSize:48}} />}
+        {carCalculate.type === 'Benziner' && <EvStationIcon sx= {{fontSize:48}} />}
+        {carCalculate.type === 'Hybrid' && <EarbudsBatteryIcon  sx= {{fontSize:48}}/>}
       </Box>
       <Box sx={{
         display: 'flex',
         justifyContent:'center',
         fontSize: 44,
-        marginTop: 4,
-        alignItems: 'flex-end'
+        marginTop: 6,
+        alignItems: 'flex-end',
+        fontWeight: 500
       }}>
         €{carCalculate.per} 
         <Box sx={{
-          fontSize: 16,
+          fontSize: 14,
           lineHeight:'30px'
         }}>/ km</Box>
+        
       </Box>
+
+     
      
       <Box sx= {{
         display: 'flex',
         alignItems: 'center',
         flexDirection: 'column'
-      }}>
+      }}>         
         <Box sx = {textStyle} >
-        <span style={spanTextStyle}>Total&nbsp;</span> €{carCalculate.total}
+          <Box sx={spanTextStyle}>Gesamtkosten:</Box> 
+          <Box  sx={span2TextStyle}> €{carCalculate.total}</Box>
         </Box>
+
         <Box sx = {textStyle} >
-        <span style={spanTextStyle}>Kosten&nbsp;</span>
-        €{carCalculate.kosten}
+          <Box sx={spanTextStyle}>CAPEX:</Box> 
+          <Box  sx={span2TextStyle}> €{carCalculate.kosten}</Box>
         </Box>
+
         <Box sx = {textStyle} >
-        <span style={spanTextStyle}>OPEX&nbsp;</span>
-        €{carCalculate.OPEX}
-      </Box>
+          <Box sx={spanTextStyle}>Gesamt OPEX:</Box> 
+          <Box  sx={span2TextStyle}> €{carCalculate.OPEX}</Box>
+        </Box>
+ 
+        <Box sx = {textStyle} >
+          <span style={spanTextStyle}>Batterieverbrauch:</span>
+          {carCalculate.batteryStatus * 100} %
+        </Box>
       </Box>
     
     </Box>

@@ -15,7 +15,8 @@ const Cars = () => {
   }}>
     <Box sx= {{
       paddingLeft: 1,
-      fontSize: '24px',
+      fontSize: '20px',
+      fontWeight: 500
     }}>Cars: </Box>
     {
       cars.map((car)=> <CarItem car = {car} key= {car.id}/>)

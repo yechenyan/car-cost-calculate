@@ -12,7 +12,8 @@ import {getNumberInput, getTextInput} from "../utils/input.ts"
 const Title = ({children}) => {
   return <Box sx = {{
     marginTop: 4,
-    fontSize: '20px'
+    fontSize: '20px',
+    fontWeight: 500,
   }}>{children}</Box>
 }
 
@@ -33,7 +34,7 @@ const CarEdit = () => {
   return <Box sx= {{width: '100%'}}>
     <Box sx= {{justifyContent: 'space-between', display: 'flex'}}>
       <Box sx= {{
-        fontSize: '28px',
+        fontSize: '20px',
         fontWeight: 500,
       }}>Edit Car</Box>
       <Button onClick = {() => {
@@ -43,7 +44,8 @@ const CarEdit = () => {
       >Close</Button>
     </Box>
     <MyTextFiled label = 'Name' {...getTextInput('name', setCar, car)} type = 'text'/>
-    <MyTextFiled label = 'Stromverbrauch/100km in L' {...getNumberInput('stromabdeckung', setCar, car)}/>
+    <MyTextFiled label = 'stromabdeckung in %' {...getNumberInput('stromabdeckung', setCar, car)}/>
+    <MyTextFiled label = 'Stromverbrauch/100km in Km' {...getNumberInput('stromverbrauch', setCar, car)}/>
     <MyTextFiled label = 'Kraftstoffverbrauch/100km in KW/h' {...getNumberInput('kraftstoffverbrauch', setCar, car)}/>
     <MyTextFiled label = 'Ladeverluste in %' {...getNumberInput('ladeverluste', setCar, car)}/>
 
@@ -57,12 +59,16 @@ const CarEdit = () => {
     <MyTextFiled label = 'Jährliche Wartungskosten in €/Jahr' {...getNumberInput('jährlicheWartungskosten', setCar, car)}/>
     <MyTextFiled label = 'Versicherungskosten in €/Jahr ' {...getNumberInput('versicherungskosten', setCar, car)}/>
     
-    {/* <Title>Batterieverluste</Title>
-    <MyTextFiled label = 'Batteriekapazität' {...getNumberInput('name', setCar, car)}/>
-    <MyTextFiled label = 'Batterieverluste' {...getNumberInput('name', setCar, car)}/>
-     */}
+    <Title>Batterieverluste</Title>
+    <MyTextFiled label = 'Batteriekapazität in KW/h' {...getNumberInput('Batteriekapazität', setCar, car)}/>
+    <MyTextFiled label = 'Batterieverluste' {...getNumberInput('Batterieverluste', setCar, car)}/>
+    <MyTextFiled label = 'Batteriepreis in €' {...getNumberInput('Batteriepreis', setCar, car)}/>
+
     <Title>Abfallentsorgung</Title>
     <MyTextFiled label = 'Wiederverkaufswert in €' {...getNumberInput('wiederverkaufswert', setCar, car)}/>
+    <MyTextFiled label = 'Laufleistung beim Wiederverkauf in €' {...getNumberInput('LaufleistungBeimWiederverkauf', setCar, car)}/>
+
+    
     <Box sx= {{
       display: 'flex',
       justifyContent: "center"
@@ -70,6 +76,7 @@ const CarEdit = () => {
       <Button onClick= {handleDelete} sx= {{
         marginTop: 1,
         padding:1,
+        color: '#676565'
       }}>Delete</Button>
     </Box>
   </Box>

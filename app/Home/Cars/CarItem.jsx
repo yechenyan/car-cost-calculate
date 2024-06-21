@@ -21,7 +21,7 @@ const CarItem = ({car}) => {
     <Box sx= {{
       paddingTop: 1,
       paddingBottom: 1,
-      fontSize: '20px',
+      
       color: '#000'
     }}>{car.name}</Box>
     <Button onClick = {() => {setCurrentEditIdCar(car.id)}} sx= {{
