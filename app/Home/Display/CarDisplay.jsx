@@ -108,25 +108,31 @@ const CarDisplay = ({ index }) => {
       }}>         
         <Box sx = {textStyle} >
           <Box sx={spanTextStyle}>Gesamtkosten:</Box> 
-          <Box  sx={span2TextStyle}> €{carCalculate.total}</Box>
+          <Box  sx={span2TextStyle}>€{carCalculate.total}</Box>
         </Box>
 
         <Box sx = {textStyle} >
           <Box sx={spanTextStyle}>CAPEX:</Box> 
-          <Box  sx={span2TextStyle}> €{carCalculate.kosten}</Box>
+          <Box  sx={span2TextStyle}> + €{carCalculate.kosten}</Box>
         </Box>
 
         <Box sx = {textStyle} >
           <Box sx={spanTextStyle}>Gesamt OPEX:</Box> 
-          <Box  sx={span2TextStyle}> €{carCalculate.OPEX}</Box>
+          <Box  sx={span2TextStyle}> + €{carCalculate.OPEX}</Box>
+        </Box>
+
+        <Box sx = {textStyle} >
+          <Box style={spanTextStyle}>Widerverkauf:</Box>
+          <Box  sx={span2TextStyle}>- €{carCalculate.widerverkauf}</Box>
         </Box>
  
         <Box sx = {textStyle} >
-          <span style={spanTextStyle}>Batterieverbrauch:</span>
-          {carCalculate.batteryStatus * 100} %
+          <Box style={spanTextStyle}>Batterieverbrauch:</Box>
+          <Box  sx={span2TextStyle}>{carCalculate.batteryStatus} %</Box>
         </Box>
+        
       </Box>
-    
+      
     </Box>
   );
 };

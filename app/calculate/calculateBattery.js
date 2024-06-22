@@ -4,12 +4,12 @@ const calculateBattery = (data) => {
   let costE = totalKm * data.stromabdeckung
   let batteryChargeCount = costE / data.Batteriekapazität
 
-  let batteryStatus = (batteryChargeCount / data.Batterieverluste).toFixed(2)
+  let batteryStatus = (batteryChargeCount / data.Batterieverluste)
 
   let batteryCost = Math.floor(batteryStatus) * data.Batteriepreis
 
   return {
-    batteryStatus,
+    batteryStatus: batteryStatus,
     batteryCost
   }
 

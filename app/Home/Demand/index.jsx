@@ -36,7 +36,7 @@ const Demand = () => {
       <MyLabelField label = 'Km pro Woche in Km'>
         <Slider 
           min = {0}
-          max = {1000}
+          max = {5000}
           step = {10}
           {...getSlideInput('kmProWoche',setDemandData, demandData)}
            />

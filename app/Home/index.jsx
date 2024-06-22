@@ -15,7 +15,7 @@ const Home = () => {
 
     <Box
       sx={{
-        background: "linear-gradient(66deg, #E1F0E3 0%, #edddfb 100%)",
+        background: "linear-gradient(66deg, #e6fbfe 0%, #edddfb 100%)",
         minHeight: '100vh',
         paddingBottom: 2,
         display: 'flex',

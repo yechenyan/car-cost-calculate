@@ -66,7 +66,7 @@ const CarEdit = () => {
 
     <Title>Abfallentsorgung</Title>
     <MyTextFiled label = 'Wiederverkaufswert in €' {...getNumberInput('wiederverkaufswert', setCar, car)}/>
-    <MyTextFiled label = 'Laufleistung beim Wiederverkauf in €' {...getNumberInput('LaufleistungBeimWiederverkauf', setCar, car)}/>
+    <MyTextFiled label = 'Laufleistung beim Wiederverkauf in Km' {...getNumberInput('LaufleistungBeimWiederverkauf', setCar, car)}/>
 
     
     <Box sx= {{
