@@ -44,7 +44,7 @@ const CarEdit = () => {
       >Close</Button>
     </Box>
     <MyTextFiled label = 'Name' {...getTextInput('name', setCar, car)} type = 'text'/>
-    <MyTextFiled label = 'stromabdeckung in %' {...getNumberInput('stromabdeckung', setCar, car)}/>
+    <MyTextFiled label = 'Stromabdeckung in %' {...getNumberInput('stromabdeckung', setCar, car)}/>
     <MyTextFiled label = 'Stromverbrauch/100km in Km' {...getNumberInput('stromverbrauch', setCar, car)}/>
     <MyTextFiled label = 'Kraftstoffverbrauch/100km in KW/h' {...getNumberInput('kraftstoffverbrauch', setCar, car)}/>
     <MyTextFiled label = 'Ladeverluste in %' {...getNumberInput('ladeverluste', setCar, car)}/>

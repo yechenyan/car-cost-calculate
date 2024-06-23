@@ -16,7 +16,7 @@ const DemandDetail = () => {
   
 
   return <Box sx= {{marginTop: 2}}>
-       <MyTextFiled label = 'zinsrate in %' {...getNumberInput('zinsrate', setDemandData, demandData)}/>
+       <MyTextFiled label = 'Zinsrate in %' {...getNumberInput('zinsrate', setDemandData, demandData)}/>
       <MyTextFiled label = 'Benzinpreis in €' {...getNumberInput('benzinpreis', setDemandData, demandData)}/>
       <MyTextFiled label = 'Ölpreisentwicklung in %' {...getNumberInput('ölpreisentwicklung', setDemandData, demandData)}/>
       <MyTextFiled label = 'Stromkosten Haushalt in €' {...getNumberInput('stromkostenHaushalt', setDemandData, demandData)}/>

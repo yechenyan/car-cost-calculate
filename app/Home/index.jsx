@@ -12,12 +12,13 @@ import theme from './theme'
 const Home = () => {
   return (
     <ThemeProvider theme={theme}>
+      <Box sx= {{ background: "linear-gradient(66deg, #e6fbfe 0%, #edddfb 100%)",
+        minHeight: '100vh',
+        paddingBottom: 2,}}>
 
     <Box
       sx={{
-        background: "linear-gradient(66deg, #e6fbfe 0%, #edddfb 100%)",
-        minHeight: '100vh',
-        paddingBottom: 2,
+       
         display: 'flex',
         flexWrap: 'wrap',
 
@@ -37,7 +38,8 @@ const Home = () => {
           }
         }}
       >
-        <Head />
+              <Head />
+
         <Display />
       </Box>
       <Box 
@@ -51,6 +53,7 @@ const Home = () => {
         <ConfigEdit />
         <Footer />
       </Box> 
+    </Box>
     </Box>
     </ThemeProvider>
   );

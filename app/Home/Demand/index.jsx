@@ -23,9 +23,9 @@ const Demand = () => {
         fontSize: '20px',
         fontWeight: 500,
         paddingTop: 1,
-      }}> What are your car usage habits?</Box>
+      }}>Wie nutzen Sie Ihr Auto?</Box>
     
-      <MyLabelField label = 'Jahr'>
+      <MyLabelField label = 'Nutzdauer in Jahren'>
         <Slider 
           min = {0}
           max = {50}
@@ -33,7 +33,7 @@ const Demand = () => {
            />
       </MyLabelField>
 
-      <MyLabelField label = 'Km pro Woche in Km'>
+      <MyLabelField label = 'km pro Woche'>
         <Slider 
           min = {0}
           max = {5000}

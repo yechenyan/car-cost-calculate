@@ -27,7 +27,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-, "app/page.js", "app/Home/Deamd/index.jsx"  ],
+, "app/page.js", "app/Home/Deamd/index.jsx", "app/Home/ConfigEdit/index.jsx", "app/Home/AddCar/index.jsx"  ],
   "exclude": [
     "node_modules"
   ]

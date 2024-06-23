@@ -7,7 +7,6 @@ const calculateWiderverkauf = (data) => {
 
   let usedPrice = data.fahrzeugpreis - totalKm * pricePerKm
 
-  console.log(1111, usedPrice)
 
   const wiederverkaufswertPV = usedPrice > 0 ?getPresentValue(
     usedPrice,
