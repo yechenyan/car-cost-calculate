@@ -61,7 +61,7 @@ const CarEdit = () => {
     
     <Title>Batterieverluste</Title>
     <MyTextFiled label = 'Batteriekapazität in kW/h' {...getNumberInput('Batteriekapazität', setCar, car)}/>
-    <MyTextFiled label = 'Batterieverluste' {...getNumberInput('Batterieverluste', setCar, car)}/>
+    <MyTextFiled label = 'Max. Anzahl an Ladezyklen' {...getNumberInput('Batterieverluste', setCar, car)}/>
     <MyTextFiled label = 'Batteriepreis in €' {...getNumberInput('Batteriepreis', setCar, car)}/>
 
     <Title>Abfallentsorgung</Title>
