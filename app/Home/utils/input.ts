@@ -1,7 +1,7 @@
 export const getNumberInput = (key, setCar, car) => {
   const onChange = (e) => {
     const value = e.target.value;
-    if (!isNaN(value) && value !== "") {
+    if (!isNaN(value)) {
       setCar({ [key]: Number(value) });
     } else {
       setCar({ [key]: value });
