@@ -129,7 +129,7 @@ const CarDisplay = ({ index }) => {
         <Box sx = {textStyle} >
           <Box style={spanTextStyle}>Batterieverschleiß:</Box>
           <Box  sx={span2TextStyle}>{carCalculate.batteryStatus} %
-            <span style = {{color: '#676565'}}> (${carCalculate?.batteryCost})</span></Box>
+            <span style = {{color: '#676565'}}> (€{carCalculate?.batteryCost})</span></Box>
         </Box>
         
       </Box>
