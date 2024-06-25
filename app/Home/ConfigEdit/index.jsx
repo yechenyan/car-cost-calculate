@@ -15,7 +15,7 @@ const ConfigEdit = () => {
     try {
       setUserData(JSON.parse(e.target.value))
     } catch (err) {
-
+      console.error(err)
     }
   }
 

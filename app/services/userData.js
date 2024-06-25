@@ -3,7 +3,84 @@ import calculate from "../calculate"
 import {selectCarsIdAtom, currentEditIdCarAtom} from "./ui"
 import { atomWithStorage } from 'jotai/utils'
 
-export const defaultUserData = {
+export const defaultUserData =  {
+  "nachfrageData": {
+      "zinsrate": 2,
+      "jahr": 22,
+      "kmProWoche": 220,
+      "benzinpreis": 1.83,
+      "ölpreisentwicklung": 3,
+      "stromkostenHaushalt": 0.2,
+      "stromkostenHaushaltWicklung": 1,
+      "strommarktpreise": 0.5,
+      "strommarktpreiseWicklung": 1,
+      "stromabdeckungHaushalt": 50
+  },
+  "cars": [
+      {
+          "name": "VW Golf",
+          "id": 0,
+          "stromabdeckung": 0,
+          "stromverbrauch": 0,
+          "kraftstoffverbrauch": 6,
+          "ladeverluste": 0,
+          "fahrzeugpreis": 25000,
+          "steuern": 150,
+          "KFZZeichen": 35,
+          "subventionen": 0,
+          "jährlicheWartungskosten": 400,
+          "versicherungskosten": 700,
+          "Batteriekapazität": 0,
+          "Batterieverluste": 0,
+          "Batteriepreis": 0,
+          "wiederverkaufswert": 12500,
+          "LaufleistungBeimWiederverkauf": 60000
+      },
+      {
+          "name": "Tesla Y",
+          "id": 1,
+          "stromabdeckung": 100,
+          "stromverbrauch": 17.5,
+          "kraftstoffverbrauch": 17.5,
+          "ladeverluste": 10,
+          "fahrzeugpreis": 55000,
+          "steuern": 0,
+          "KFZZeichen": 35,
+          "subventionen": 9000,
+          "jährlicheWartungskosten": 400,
+          "versicherungskosten": 1000,
+          "Batteriepreis": 12500,
+          "Batteriekapazität": 75,
+          "Batterieverluste": 1750,
+          "wiederverkaufswert": 40000,
+          "LaufleistungBeimWiederverkauf": 70000
+      },
+      {
+          "name": "VW e-Golf",
+          "id": 101,
+          "stromabdeckung": 100,
+          "stromverbrauch": 14.5,
+          "kraftstoffverbrauch": 14.5,
+          "ladeverluste": 10,
+          "fahrzeugpreis": 32900,
+          "steuern": 0,
+          "KFZZeichen": 35,
+          "subventionen": 9000,
+          "jährlicheWartungskosten": 250,
+          "versicherungskosten": 600,
+          "wiederverkaufswert": 17500,
+          "Batteriekapazität": 35.8,
+          "Batterieverluste": 1250,
+          "Batteriepreis": 7000,
+          "LaufleistungBeimWiederverkauf": 60000
+      }
+  ]
+}
+
+
+
+
+export const defaultUserData2 = {
   nachfrageData: {
     zinsrate: 2,
     jahr: 10,
@@ -70,8 +147,8 @@ export const defaultUserData = {
   ],
 }
 
-export const userDataAtom = atomWithStorage('user-data',defaultUserData);
-// export const userDataAtom = atom(defaultUserData)
+// export const userDataAtom = atomWithStorage('user-data',defaultUserData);
+export const userDataAtom = atom(defaultUserData)
 
 
 export const currentCarAtom = atom((get)=> {

@@ -24,15 +24,15 @@ const calculateOPEXPerYear = (year, data) => {
   const benzinKm = totalKm - stromKm;
 
   const stromHaushaltCost =
-    ((stromKm / 100) * data.stromverbrauch) /
+    ((stromKm / 100) * data.stromverbrauch) *
     currentStromkostenHaushalt /
     (1 - data.ladeverluste);
   const strommarktCost =
-    ((strommarktKm / 100) * data.stromverbrauch) /
+    ((strommarktKm / 100) * data.stromverbrauch) *
     currentStrommarktpreise /
     (1 - data.ladeverluste);
   const benzinCost =
-    ((benzinKm / 100) * data.kraftstoffverbrauch) / currentBenzinpreis;
+    ((benzinKm / 100) * data.kraftstoffverbrauch) * currentBenzinpreis;
 
   let OPEX = stromHaushaltCost + strommarktCost + benzinCost;
 
@@ -47,7 +47,6 @@ const calculateOPEXPerYear = (year, data) => {
     data.zinsrate,
     year,
   );
-
   OPEX = OPEX + currentJährlicheWartungskosten + currentVersicherungskosten;
 
   return OPEX;

@@ -19,7 +19,7 @@ const calculate = (data) => {
 
   let type = 'Hybrid'
 
-  if (data.stromabdeckung >= 100) {
+  if (data.stromabdeckung >= 1) {
     type = 'E-Auto'
   }  else if (data.stromabdeckung <= 0) {
     type = 'Benziner'
@@ -37,6 +37,7 @@ const calculate = (data) => {
     type
   };
 } catch (e) {
+  console.error(e)
   return {}
 }
 };

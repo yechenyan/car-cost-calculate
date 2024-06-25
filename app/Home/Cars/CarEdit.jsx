@@ -46,7 +46,7 @@ const CarEdit = () => {
     <MyTextFiled label = 'Name' {...getTextInput('name', setCar, car)} type = 'text'/>
     <MyTextFiled label = 'Stromabdeckung in %' {...getNumberInput('stromabdeckung', setCar, car)}/>
     <MyTextFiled label = 'Stromverbrauch/100km in km' {...getNumberInput('stromverbrauch', setCar, car)}/>
-    <MyTextFiled label = 'Kraftstoffverbrauch/100km in kW/h' {...getNumberInput('kraftstoffverbrauch', setCar, car)}/>
+    <MyTextFiled label = 'Kraftstoffverbrauch/100km in kWh' {...getNumberInput('kraftstoffverbrauch', setCar, car)}/>
     <MyTextFiled label = 'Ladeverluste in %' {...getNumberInput('ladeverluste', setCar, car)}/>
 
     <Title>Anschaffungskosten</Title>
@@ -60,7 +60,7 @@ const CarEdit = () => {
     <MyTextFiled label = 'Versicherungskosten in €/Jahr ' {...getNumberInput('versicherungskosten', setCar, car)}/>
     
     <Title>Batterieverluste</Title>
-    <MyTextFiled label = 'Batteriekapazität in kW/h' {...getNumberInput('Batteriekapazität', setCar, car)}/>
+    <MyTextFiled label = 'Batteriekapazität in kWh' {...getNumberInput('Batteriekapazität', setCar, car)}/>
     <MyTextFiled label = 'Max. Anzahl an Ladezyklen' {...getNumberInput('Batterieverluste', setCar, car)}/>
     <MyTextFiled label = 'Batteriepreis in €' {...getNumberInput('Batteriepreis', setCar, car)}/>
 

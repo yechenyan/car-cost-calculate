@@ -1,12 +1,11 @@
 export const getNumberInput = (key, setCar, car) => {
   const onChange = (e) => {
     const value = e.target.value;
-    // if (!isNaN(value) && value !== "") {
-    //   setCar({ [key]: Number(e.target.value) });
-    // } else {
-    //   setCar({ [key]: value });
-    // }
-    setCar({ [key]: value });
+    if (!isNaN(value) && value !== "") {
+      setCar({ [key]: Number(value) });
+    } else {
+      setCar({ [key]: value });
+    }
   };
   const isError = isNaN(car[key]) || car[key] === "";
   return {
