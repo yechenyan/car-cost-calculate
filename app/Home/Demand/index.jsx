@@ -29,6 +29,7 @@ const Demand = () => {
         <Slider 
           min = {0}
           max = {50}
+          marks ={[{value:0, label:'0'}, {value:50, label: '50'}]}
           {...getSlideInput('jahr',setDemandData, demandData)}
            />
       </MyLabelField>
@@ -38,6 +39,7 @@ const Demand = () => {
           min = {0}
           max = {5000}
           step = {10}
+          marks ={[{value:0, label:'0'}, {value:5000, label: '5000'}]}
           {...getSlideInput('kmProWoche',setDemandData, demandData)}
            />
       </MyLabelField>
@@ -47,6 +49,7 @@ const Demand = () => {
           min = {0}
           step={1}
           max = {100}
+          marks ={[{value:0, label:'0'}, {value:100, label: '100'}]}
           {...getSlideInput('stromabdeckungHaushalt',setDemandData, demandData)}
            />
       </MyLabelField>
@@ -63,7 +66,7 @@ const Demand = () => {
         onClick = {() => {setIsDemandMore(value => !value)}}
 
         > {
-          !isDemandMore ? 'show more' : 'show less'
+          !isDemandMore ? 'NÄHERE ANGABEN' : 'WENIGER ANSEHEN'
         }</Button>
       </Box>
       </Box>

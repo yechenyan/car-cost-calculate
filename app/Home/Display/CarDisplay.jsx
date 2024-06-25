@@ -117,7 +117,7 @@ const CarDisplay = ({ index }) => {
         </Box>
 
         <Box sx = {textStyle} >
-          <Box sx={spanTextStyle}>Gesamt OPEX:</Box> 
+          <Box sx={spanTextStyle}>Jährliche OPEX:</Box> 
           <Box  sx={span2TextStyle}> + €{carCalculate.OPEX}</Box>
         </Box>
 
@@ -128,7 +128,8 @@ const CarDisplay = ({ index }) => {
  
         <Box sx = {textStyle} >
           <Box style={spanTextStyle}>Batterieverbrauch:</Box>
-          <Box  sx={span2TextStyle}>{carCalculate.batteryStatus} %</Box>
+          <Box  sx={span2TextStyle}>{carCalculate.batteryStatus} %
+            <span style = {{color: '#676565'}}> (${carCalculate?.batteryCost})</span></Box>
         </Box>
         
       </Box>

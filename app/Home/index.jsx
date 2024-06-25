@@ -33,7 +33,7 @@ const Home = () => {
       <Box 
         sx= {{
           flex:1, 
-          sx: {
+          sm: {
             width: '100vw'
           }
         }}
@@ -45,6 +45,10 @@ const Home = () => {
       <Box 
         sx= {{
           flex: 1, 
+          marginTop: {
+            sx:1,
+            sm:24
+          }
         }}>
       <Demand />
       

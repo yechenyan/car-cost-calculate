@@ -31,7 +31,7 @@ const Head = () => {
           textAlign: "center",
           lineHeight: 1,
           letterSpacing: '-0.025em',
-          marginTop: 10
+          marginTop: 4
         }}
        
       >

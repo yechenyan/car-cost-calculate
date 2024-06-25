@@ -4,6 +4,7 @@ import calculateBattery from "./calculateBattery"
 import calculateWiderverkauf from "./calculateWiderverkauf"
 
 const calculate = (data) => {
+  try {
   const kosten = calculateCost(data);
   let OPEX = calculateOPEX(data);
   const battery = calculateBattery(data)
@@ -31,9 +32,13 @@ const calculate = (data) => {
     per: per.toFixed(2),
     perOPEX: perOPEX.toFixed(2),
     batteryStatus: (battery?.batteryStatus * 100).toFixed(1),
+    batteryCost: battery?.batteryCost.toFixed(0),
     widerverkauf: widerverkauf.toFixed(2),
     type
   };
+} catch (e) {
+  return {}
+}
 };
 
 export default calculate;

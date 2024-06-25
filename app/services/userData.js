@@ -28,7 +28,7 @@ export const defaultUserData = {
       fahrzeugpreis: 30000,
       steuern: 3000,
       KFZZeichen: 3000,
-      subventionen: -500,
+      subventionen: 500,
 
       jährlicheWartungskosten: 100,
       versicherungskosten: 100,
@@ -51,7 +51,7 @@ export const defaultUserData = {
       fahrzeugpreis: 30000,
       steuern: 3000,
       KFZZeichen: 3000,
-      subventionen: -500,
+      subventionen: 500,
 
       jährlicheWartungskosten: 100,
       versicherungskosten: 100,
@@ -70,8 +70,8 @@ export const defaultUserData = {
   ],
 }
 
-// export const userDataAtom = atomWithStorage('user-data',defaultUserData);
-export const userDataAtom = atom(defaultUserData)
+export const userDataAtom = atomWithStorage('user-data',defaultUserData);
+// export const userDataAtom = atom(defaultUserData)
 
 
 export const currentCarAtom = atom((get)=> {

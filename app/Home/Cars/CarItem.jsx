@@ -27,7 +27,7 @@ const CarItem = ({car}) => {
     <Button onClick = {() => {setCurrentEditIdCar(car.id)}} sx= {{
       fontSize: '16px',
       color: '#676565'
-    }}>Edit</Button>
+    }}>BEARBEITEN</Button>
   </Box>
 
 

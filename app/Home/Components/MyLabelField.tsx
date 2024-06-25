@@ -16,6 +16,7 @@ const MyLabelField = ({label, children}) => {
       fontSize: 14
     }}>{label}</Box>
     <Box sx= {{
+      paddingRight: 2,
       flexGrow: 1}}>{children}</Box>
   </Box>)
 }

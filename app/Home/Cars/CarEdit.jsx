@@ -41,12 +41,12 @@ const CarEdit = () => {
         setCurrentCarId(null)
       }}
         sx= {{color: '#676565'}}
-      >Close</Button>
+      >SCHLIEßEN</Button>
     </Box>
     <MyTextFiled label = 'Name' {...getTextInput('name', setCar, car)} type = 'text'/>
     <MyTextFiled label = 'Stromabdeckung in %' {...getNumberInput('stromabdeckung', setCar, car)}/>
-    <MyTextFiled label = 'Stromverbrauch/100km in Km' {...getNumberInput('stromverbrauch', setCar, car)}/>
-    <MyTextFiled label = 'Kraftstoffverbrauch/100km in KW/h' {...getNumberInput('kraftstoffverbrauch', setCar, car)}/>
+    <MyTextFiled label = 'Stromverbrauch/100km in km' {...getNumberInput('stromverbrauch', setCar, car)}/>
+    <MyTextFiled label = 'Kraftstoffverbrauch/100km in kW/h' {...getNumberInput('kraftstoffverbrauch', setCar, car)}/>
     <MyTextFiled label = 'Ladeverluste in %' {...getNumberInput('ladeverluste', setCar, car)}/>
 
     <Title>Anschaffungskosten</Title>
@@ -60,13 +60,13 @@ const CarEdit = () => {
     <MyTextFiled label = 'Versicherungskosten in €/Jahr ' {...getNumberInput('versicherungskosten', setCar, car)}/>
     
     <Title>Batterieverluste</Title>
-    <MyTextFiled label = 'Batteriekapazität in KW/h' {...getNumberInput('Batteriekapazität', setCar, car)}/>
+    <MyTextFiled label = 'Batteriekapazität in kW/h' {...getNumberInput('Batteriekapazität', setCar, car)}/>
     <MyTextFiled label = 'Batterieverluste' {...getNumberInput('Batterieverluste', setCar, car)}/>
     <MyTextFiled label = 'Batteriepreis in €' {...getNumberInput('Batteriepreis', setCar, car)}/>
 
     <Title>Abfallentsorgung</Title>
     <MyTextFiled label = 'Wiederverkaufswert in €' {...getNumberInput('wiederverkaufswert', setCar, car)}/>
-    <MyTextFiled label = 'Laufleistung beim Wiederverkauf in Km' {...getNumberInput('LaufleistungBeimWiederverkauf', setCar, car)}/>
+    <MyTextFiled label = 'Laufleistung beim Wiederverkauf in km' {...getNumberInput('LaufleistungBeimWiederverkauf', setCar, car)}/>
 
     
     <Box sx= {{
@@ -77,7 +77,7 @@ const CarEdit = () => {
         marginTop: 1,
         padding:1,
         color: '#676565'
-      }}>Delete</Button>
+      }}>LÖSCHEN</Button>
     </Box>
   </Box>
 
