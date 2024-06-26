@@ -9,6 +9,10 @@ const calculateWiderverkauf = (data) => {
 
   usedPrice  = usedPrice > 0 ? usedPrice : data.fahrzeugpreis * 0.1
 
+  if (usedPrice >=  data.fahrzeugpreis * 0.8) {
+    usedPrice = data.fahrzeugpreis * 0.8
+  }
+
   const wiederverkaufswertPV = getPresentValue(
     usedPrice,
     data.zinsrate,

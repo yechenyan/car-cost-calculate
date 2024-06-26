@@ -33,7 +33,7 @@ const calculate = (data) => {
     perOPEX: perOPEX.toFixed(2),
     batteryStatus: (battery?.batteryStatus * 100).toFixed(1),
     batteryCost: battery?.batteryCost.toFixed(0),
-    widerverkauf: widerverkauf.toFixed(2),
+    widerverkauf: widerverkauf.toFixed(0),
     type
   };
 } catch (e) {

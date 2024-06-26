@@ -46,7 +46,7 @@ export const defaultUserData =  {
           "fahrzeugpreis": 55000,
           "steuern": 0,
           "KFZZeichen": 35,
-          "subventionen": 9000,
+          "subventionen": 0,
           "jährlicheWartungskosten": 400,
           "versicherungskosten": 1000,
           "Batteriepreis": 12500,
