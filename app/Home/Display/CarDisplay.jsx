@@ -122,7 +122,7 @@ const CarDisplay = ({ index }) => {
         </Box>
 
         <Box sx = {textStyle} >
-          <Box style={spanTextStyle}>Widerverkauf:</Box>
+          <Box style={spanTextStyle}>Wiederverkauf:</Box>
           <Box  sx={span2TextStyle}>- €{carCalculate.widerverkauf}</Box>
         </Box>
  
