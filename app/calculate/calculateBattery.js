@@ -6,7 +6,7 @@ const calculateBattery = (data) => {
   }
   let totalKm = (data.kmProWoche * 365) / 7 * data.jahr
 
-  let costE = totalKm * data.stromabdeckung
+  let costE = totalKm * data.stromabdeckung / 2
   let batteryChargeCount = costE / data.Batteriekapazität
 
   let batteryStatus = (batteryChargeCount / data.Batterieverluste)
